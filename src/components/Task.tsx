@@ -1,18 +1,10 @@
 import React from 'react';
-import {Button} from '@material-ui/core';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme:Theme) => createStyles({
-  button: {
-    background: theme.palette.secondary.dark
-  }
-}))
 
 export interface TaskItem{
   id: string,
   title: string,
   state: string,
-  updatedAt: Date
+  updatedAt?: Date
 }
 export interface TaskProps{
   task: TaskItem,
@@ -22,7 +14,6 @@ export interface TaskProps{
 
 
 export const Task: React.FC<TaskProps> = ({ task: { id, title, state }, onArchiveTask, onPinTask }) => {
-  const classes = useStyles();
   return ( 
   <div className={`list-item ${state}`}>
     <label className="checkbox">
@@ -47,7 +38,6 @@ export const Task: React.FC<TaskProps> = ({ task: { id, title, state }, onArchiv
         </a>
       )}
     </div>
-    <Button className={classes.button}>test button</Button>
   </div>
   )
 }
