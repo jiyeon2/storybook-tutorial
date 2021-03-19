@@ -8,8 +8,15 @@ export default {
   title: 'Example/Button',
   component: Button,
   argTypes: {
+    onClick: {action:'clicked'},
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    actions: {
+      argTypesRegex: '^on.*',
+      handles: ['mouseover', 'click.btn']
+    }
+  }
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
@@ -17,7 +24,7 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
+  label: 'skdfjlclisdk',
 };
 
 export const Secondary = Template.bind({});
@@ -36,3 +43,10 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const PrimaryLongName = Template.bind({});
+
+PrimaryLongName.args = {
+  ...Primary.args,
+  label: 'Primary with a really long name',
+}
