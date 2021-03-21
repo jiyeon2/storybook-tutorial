@@ -12,6 +12,7 @@
     "@types/prop-types": "^15.7.3",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -54,5 +55,6 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.1.21",
     "react-test-renderer": "^17.0.1"
-  }
+  },
+  "proxy": "http://localhost:3002"
 }
